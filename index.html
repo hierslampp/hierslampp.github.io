@@ -170,23 +170,16 @@
   </div>
 </section>
 
-<!-- TODO: teaser gif  -->
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <img src="./static/images/overview.png" alt="Teaser Image" style="width:100%;">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        We present Hier-SLAM++, a neuro-symbolic semantic 3D Gaussian Splatting SLAM system supporting RGB-D and monocular inputs, utilizing a compact hierarchical representation that encodes semantic and geometric information via LLMs and 3D generative models.
       </h2>
     </div>
   </div>
-</section> -->
-
+</section>
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -245,7 +238,6 @@
   </div>
 </section> -->
 
-
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -295,11 +287,30 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Pipeline Overview</h2>
 
+        <div class="columns has-text-justified">
+          <div class="content">
+            <p>
+              Within Hier-SLAM++, we model the semantic space as a
+              hierarchical tree, where semantic information is represented
+              as a root-to-leaf hierarchical symbolic structure. This representation not only comprehensively captures the hierarchical attributes of semantic information, but also effectively
+              compresses storage requirements, while enhancing semantic
+              understanding with valuable scaling-up capability. To construct
+              an effective tree, we leverage both LLMs and 3D Generative
+              Models to integrate semantic and geometric information. Next,
+              each 3D Gaussian primitive is augmented with a hierarchical
+              semantic embedding code, which can be learned in an endto-end manner through the proposed Inter-level and Crosslevel semantic losses. Furthermore, our method is extended
+              to support monocular input by incorporating geometric priors
+              extracted from the feed-forward method, thereby eliminating
+              the dependency on depth information
+            </p>
+          </div>
+        </div>
+
         <div class="content has-text-justified">
           <figure class="image">
             <img src="./static/images/pipeline.png" style="max-width: 100%; height: auto;">
           </figure>
-          <p>
+          <p style="font-size: 13px; color: #808080;">
             <b>Left:</b> The global 3D Gaussian map is initialized using the first frame of the video stream input. The system
             then alternates between the Tracking and Mapping steps as new frames are processed. In the RGB-D setting, depth is directly obtained
             from sensor input, whereas in the monocular setting the 3D feed-forward method (DUSt3R) is used to generate a geometric prior for depth estimation
@@ -308,6 +319,20 @@
             representation. <b>Bottom Right:</b> An example of hierarchical semantic rendering.
           </p>
         </div>
+
+        <!-- <div class="columns has-text-justified">
+          <div class="content">
+            <p>
+              We propose hierarchical symbolic representation for semantic information to provide improved efficiency, compression,
+              and compactness for semantic SLAM, making it well-suited
+              for multi-parameter joint optimization and enabling scalability
+              to complex scenes
+            </p>
+          </div>
+        </div>
+        <figure class="image">
+          <img src="./static/images/tree.png" style="max-width: 100%; height: auto;">
+        </figure> -->
       </div>
     </div>
     <!-- Pipeline Overview -->
@@ -329,7 +354,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">RGB</h2>
-      <video id="s2_recon" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="o0_rgb" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/office0_rgb.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -339,7 +364,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Semantic</h2>
-      <video id="s2_nvs" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="o0_sem" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/office0_semantic.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -366,7 +391,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">RGB</h2>
-      <video id="s2_recon" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r0_rgb" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room0_rgb.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -376,7 +401,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Semantic</h2>
-      <video id="s2_nvs" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r0_sem" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room0_semantic.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -403,7 +428,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">RGB</h2>
-      <video id="s2_recon" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r2_rgb" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room1_rgb.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -413,7 +438,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Semantic</h2>
-      <video id="s2_nvs" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r1_sem" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room1_semantic.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -440,7 +465,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">RGB</h2>
-      <video id="s2_recon" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r2_rgb" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room2_rgb.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -450,7 +475,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Semantic</h2>
-      <video id="s2_nvs" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+      <video id="r2_sem" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
         <source src="./static/video/room2_semantic.mp4" type="video/mp4">
       </video>
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
@@ -461,6 +486,7 @@
   </div>
   </div>
 </section>
+
 
 <!-- <section class="section">
   <div class="container is-max-desktop">
