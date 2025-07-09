@@ -311,12 +311,9 @@
             <img src="./static/images/pipeline.png" style="max-width: 1500px; width: 100%; height: auto;">
           </figure>
           <p style="font-size: 13px; color: #808080;">
-            <b>Left:</b> The global 3D Gaussian map is initialized using the first frame of the video stream input. The system
-            then alternates between the Tracking and Mapping steps as new frames are processed. In the RGB-D setting, depth is directly obtained
-            from sensor input, whereas in the monocular setting the 3D feed-forward method (DUSt3R) is used to generate a geometric prior for depth estimation
-            <b>Top Right:</b> Hierarchical representation of semantic information. The Tree Generation process leverages the capabilities of both LLMs and
-            3D Generative Models in a top-to-bottom manner. This hierarchical tree is used to establish a symbolic coding for each Gaussian primitive. Additionally, we introduce a novel loss function that combines Inter-level Loss L<sub>Inter</sub> and Cross-level Loss L<sub>Cross</sub> to optimize the hierarchical semantic
-            representation. <b>Bottom Right:</b> An example of hierarchical semantic rendering.
+            Overview of the Hier-SLAM++ pipeline. <b>Left:</b> Hierarchical representation of semantic information. The Tree Generation process leverages the capabilities of both LLMs and 3D Generative Models. This hierarchical tree is used to establish a symbolic coding for each Gaussian primitive. Additionally, we introduce a novel loss function that combines Intra-level Loss and Inter-level Loss to optimize the hierarchical semantic representation.  
+            <b>Bottom Left:</b> An example of hierarchical semantic rendering. 
+            <b>Right:</b> The global 3D Gaussian map is initialized using the first frame of the video stream input. The system then alternates between the Tracking and Mapping steps as new frames are processed. In the RGB-D setting, depth is directly obtained from sensor input, whereas in the monocular setting the 3D feed-forward method (DUSt3R) is used to generate a geometric prior for depth estimation.
           </p>
         </div>
 
@@ -331,7 +328,7 @@
           </div>
         </div>
         <figure class="image">
-          <img src="./static/images/tree.png" style="max-width: 100%; height: auto;">
+          <img src="./static/images/tree-rep.png" style="max-width: 100%; height: auto;">
         </figure> -->
       </div>
     </div>
